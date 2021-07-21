@@ -140,36 +140,23 @@ strong {
 /* END CSS RESET *******************************/
 
 /* General CSS  ********************************/
-/*
-
-  $main-color: ;
-  $accent-color: ;
-  $neutral-1: black;
-  $neutral-2: mix($neutral-1, $neutral-6, 20%);
-  $neutral-3: ;
-  $neutral-4: ;
-  $neutral-5: ;
-  $neutral-6: white;
-  $card-backogrund: ;
-
-*/
 
 $main-color: white;
 $neutral: black;
 $text-explain-color: rgb(187, 34, 34);
-$examples-backgroung: rgb(242, 238, 230);
+$examples-background: rgb(242, 238, 230);
 $neutral-3: gainsboro;
 $neutral-2: grey;
 
 $main-layout: 900px;
-$subheading-layout: 500px; // subheading-layout: 500px;
+$subheading-layout: 500px;
 
 $font-principal: "Cormorant", serif;
 $font-small-size: 12px;
-$font-gral-size: 15px; //  xs s m n regular medium l xl
+$font-gral-size: 15px;
 $font-medium-size: 22px;
-$font-medium-l-size: 30px; // l
-$font-large-size: 46px; // xl
+$font-medium-l-size: 30px;
+$font-large-size: 46px;
 
 html,
 body {
@@ -186,7 +173,7 @@ body {
   background-color: $main-color;
 }
 
-.wraper-p {
+.wrapper-p {
   width: $subheading-layout;
 }
 
@@ -331,7 +318,7 @@ h4 {
 .line-spacing-nerd-alert {
   display: block;
   width: 350px;
-  background-color: $examples-backgroung;
+  background-color: $examples-background;
   height: 120px;
   padding: 15px;
   margin-bottom: 30px;
@@ -411,37 +398,37 @@ h4 {
 
 /* End Spacing Line *************************************/
 
-/* Aligment  ********************************************/
+/* Alignment  ********************************************/
 
-.aligment-gral-container {
+.alignment-gral-container {
   margin-bottom: 60px;
 }
 
-.aligment-flex-container {
+.alignment-flex-container {
   width: 800px;
   display: flex;
   justify-content: space-between;
   margin: 30px 0 0;
 
-  .aligment-examples {
+  .alignment-examples {
     width: 380px;
-    background-color: $examples-backgroung;
+    background-color: $examples-background;
   }
 }
 
-.aligment-example-1 {
+.alignment-example-1 {
   text-align: center;
   padding: 30px 10px;
 }
 
-.aligment-example-2 p {
+.alignment-example-2 p {
   font-size: 14px;
   line-height: 18px;
   text-align: justify;
   padding: 0 80px 0 5px;
 }
 
-.aligment-example-3 {
+.alignment-example-3 {
   text-align: left;
   padding: 5px 0 60px 5px;
 
@@ -497,7 +484,7 @@ h4 {
 }
 
 .align-example-type-crime {
-  background-color: $examples-backgroung;
+  background-color: $examples-background;
 }
 
 .example-box-1 {
@@ -525,7 +512,7 @@ h4 {
 .page-centered {
   width: 400px;
   height: 600px;
-  background-color: $examples-backgroung;
+  background-color: $examples-background;
 }
 
 .page-centered {
