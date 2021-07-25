@@ -1,214 +1,8 @@
-/* CSS Reset */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-i {
-  font-style: italic;
-}
-
-strong {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* END CSS RESET *******************************/
-
-/* General CSS  ********************************/
-
-$main-color: white;
-$neutral: black;
-$text-explain-color: rgb(187, 34, 34);
-$examples-background: rgb(242, 238, 230);
-$neutral-3: gainsboro;
-$neutral-2: grey;
-
-$main-layout: 900px;
-$subheading-layout: 500px;
-
-$font-principal: "Cormorant", serif;
-$font-small-size: 12px;
-$font-gral-size: 15px;
-$font-medium-size: 22px;
-$font-medium-l-size: 30px;
-$font-large-size: 46px;
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  font-family: $font-principal;
-}
-
-.main-wrapper {
-  width: $main-layout;
-  margin: auto;
-  background-color: $main-color;
-}
-
-.wrapper-p {
-  width: $subheading-layout;
-}
-
-p {
-  font-size: $font-gral-size;
-  line-height: 25px;
-}
-
-h2,
-h3 {
-  font-weight: bold;
-  color: $neutral;
-  padding-top: 40px;
-}
-
-h2 {
-  font-size: $font-large-size;
-  border-top: 5px double $neutral;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: $font-medium-l-size;
-  font-style: italic;
-  margin-bottom: 40px;
-}
-
-h4 {
-  font-size: $font-small-size;
-  text-transform: uppercase;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
-/* END General CSS  *****************************/
+@import "./partials/_reset.scss";
+@import "./partials/_colors.scss";
+@import "./partials/_layout.scss";
+@import "./partials/_fonts.scss";
+@import "./partials/_general-styles.scss";
 
 /* Top Nav **************************************/
 
@@ -219,6 +13,8 @@ h4 {
   color: $main-color;
   justify-content: space-between;
   align-items: center;
+  margin: 0 0 10px 0;
+  padding: 0 20px;
 
   a {
     color: $main-color;
@@ -234,12 +30,16 @@ h4 {
   font-size: $font-small-size;
   font-weight: bold;
   text-transform: uppercase;
-  margin-right: 20px;
 
   a {
     padding: 0 3px 0 4px;
   }
-
+  li:after {
+    content: "|";
+  }
+  li:last-child:after {
+    content: "";
+  }
   li:first-child a {
     padding: 0 3px 0 0;
   }
@@ -248,7 +48,7 @@ h4 {
 .tittle-page {
   text-transform: uppercase;
   font-size: 18px;
-  margin-left: 20px;
+
   font-weight: bold;
 }
 
@@ -257,13 +57,6 @@ h4 {
 /* MAIN **********************************************/
 
 /* Spacing Line *************************************/
-
-.decorator-line {
-  display: inline-block;
-  width: 100%;
-  height: 5px;
-  border-bottom: 2px dotted $neutral;
-}
 
 .type-crime {
   display: inline-block;
@@ -336,14 +129,21 @@ h4 {
     line-height: 100%;
   }
 
-  .example-sup {
-    display: inline-block;
-  }
-
   .sup {
+    display: inline-block;
     font-size: $font-medium-l-size;
     font-weight: bold;
     line-height: 20px;
+    border-bottom: 1px solid $neutral-3;
+    position: relative;
+    vertical-align: top;
+    &::after {
+      content: "↑";
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
   }
 }
 
@@ -409,9 +209,11 @@ h4 {
   display: flex;
   justify-content: space-between;
   margin: 30px 0 0;
-
+  .alignment-explain-container,
   .alignment-examples {
     width: 380px;
+  }
+  .alignment-examples {
     background-color: $examples-background;
   }
 }
@@ -508,22 +310,26 @@ h4 {
   line-height: 22px;
 }
 
-.page,
-.page-centered {
+.page {
   width: 400px;
   height: 600px;
-  background-color: $examples-background;
 }
 
 .page-centered {
-  display: flex;
+  display: inline-block;
+  padding: 50px 40px;
+}
+
+.page,
+.page-centered {
+  background-color: $examples-background;
 }
 
 .text-page-container {
   width: 270px;
   height: 470px;
   border: 7px double $neutral;
-  margin: 50px 0 0 40px;
+
   text-align: center;
 }
 
