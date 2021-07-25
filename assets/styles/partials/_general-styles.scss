@@ -1,0 +1,63 @@
+@import "./partials/_colors.scss";
+@import "./partials/_layout.scss";
+@import "./partials/_fonts.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-principal;
+}
+
+.main-wrapper {
+  width: $main-layout;
+  margin: auto;
+  background-color: $main-color;
+}
+
+.wrapper-p {
+  width: $subheading-layout;
+}
+
+p {
+  font-size: $font-gral-size;
+  line-height: 25px;
+}
+
+h2,
+h3 {
+  font-weight: bold;
+  color: $neutral;
+  padding-top: 40px;
+}
+
+h2 {
+  font-size: $font-large-size;
+  border-top: 5px double $neutral;
+  margin-bottom: 20px;
+  position: relative;
+  &::before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    content: "";
+    display: block;
+    border-bottom: 2px dotted $neutral;
+  }
+}
+
+h3 {
+  font-size: $font-medium-l-size;
+  font-style: italic;
+  margin-bottom: 40px;
+}
+
+h4 {
+  font-size: $font-small-size;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px 0;
+}
